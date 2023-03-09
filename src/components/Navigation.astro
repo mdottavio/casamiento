@@ -1,0 +1,57 @@
+---
+
+---
+<div class="wrapper">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/lugar" title="El lugar">Lugar</a>
+    <a href="https://forms.gle/ovGawLZmw8as1c4CA" title="Confirmar asistencia">Confirmar</a>
+  </nav>  
+</div>
+
+<style lang="scss">
+  @import "../styles/global";
+  .wrapper {
+    padding-bottom: $padding;
+    @include query (mobile){
+      padding-bottom: 0.25rem;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      a {
+
+        flex-direction: column;
+        color: #474747;
+        border: solid 1px #CCCCCC;
+      
+        letter-spacing: 0.25rem;
+        font-size: 0.625em;
+        font-weight: 700;
+        height: 2.5rem;
+        line-height: 2.5rem;
+       
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-family: 'Raleway', sans-serif;
+
+        text-decoration: none;
+        border-radius: 3px;
+
+        padding-left: calc(0.25rem + 1.25rem);
+        padding: 0 1.25rem;
+
+        @include query (mobile){
+          padding: 0 1rem;
+        }
+
+        @include mobileLandscape {
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+</style>

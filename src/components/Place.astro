@@ -1,0 +1,45 @@
+---
+import Block from "./Block.astro";
+
+const data = {
+  id: "place",
+};
+
+---
+
+<Block id={data.id}>
+  <div slot="left" class="section-content">
+    <h3>Al Rescoldo Della Fogaratta</h3>
+    <p class="description">
+      Av. Cdad. de Valparaíso 6882, Córdoba <br />
+      <a href="https://goo.gl/maps/HCTE6FVsmGd3g275A" title="GoogleMaps" target="_blank">Google maps</a> - 
+      <a href="https://www.instagram.com/alrescoldodellafogaratta/" title="GoogleMaps" target="_blank">Instagram</a>
+      
+    </p>
+  </div>
+  
+  <div slot="right" class="section-img">
+    <div id="map-wrapper"></div>
+  </div>
+</Block>
+
+<style lang="scss">
+ #map-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+ }
+</style>
+
+<script>
+  const emmbededMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.0839114378423!2d-64.19190828499048!3d-31.494377281378195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a3899e611dd9%3A0xe7638b057e7d6258!2sAl%20Rescoldo%20Della%20Fogaratta!5e0!3m2!1ses-419!2sar!4v1663096297639!5m2!1ses-419!2sar"
+  const iframeEl = document.createElement('iframe');
+  iframeEl.setAttribute("allowfullscreen", "");
+  iframeEl.setAttribute("loading", "lazy");
+  iframeEl.setAttribute("style", "border:0;");
+  iframeEl.setAttribute("height", "100%");
+  iframeEl.setAttribute("width", "100%");
+  iframeEl.setAttribute("referrerpolicy", "lano-referrer-when-downgradezy");
+  iframeEl.src = emmbededMapUrl;
+  document.getElementById('map-wrapper').append(iframeEl);
+</script>

@@ -1,0 +1,14 @@
+//Changing The Default Settings..
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  // Changing the body here
+
+  body {
+    width: 100%;
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,23 @@
+---
+import Block from "./Block.astro";
+import home from "../assets/home.jpg";
+
+const data = {
+  id: "home",
+  img: {
+    src: home,
+    alt: "nosotros"
+  }
+};
+---
+
+<Block id={data.id} img={data.img} >
+  <div slot="left">
+    <h3>Confirmar asistencia</h3>
+    <p class="description">as
+    </p>
+  </div>
+  <div slot="rigth">
+    <img src={data.img.src} alt={data.img.alt} />
+  </div>
+</Block>

@@ -1,0 +1,94 @@
+---
+import "../styles/reset.scss";
+import sofi from "../assets/sofi.png";
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,700italic,300,300italic%7CSource+Sans+Pro:300,300italic&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <slot />
+    </div>
+    <div id="sofi">
+      <img src={sofi} alt="sofi"/>
+    </div>
+  </body>
+</html>
+
+<style lang="scss">// Style rules for container class
+  @import "../styles/global";
+  body {
+    background: $backgroundColor;
+  }
+  @keyframes entranceAnimation {
+    0% {
+      margin-top: 1.6875rem;
+      opacity: 0.1;
+    }
+    100% {
+      margin-top: 0%;
+      opacity: 1;
+    }
+  }
+  #wrapper {
+    animation: entranceAnimation 1s ease 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background: $backgroundColor;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+  
+    flex-direction: column;
+    padding: $padding;
+
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include inDesktop {
+      width: 54rem;
+      margin: 0 auto;
+    }
+  }
+  #sofi {
+    pointer-events: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;;
+    img {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+    }
+  }
+  
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-13VXQDRWPP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-13VXQDRWPP');
+</script>
+

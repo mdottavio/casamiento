@@ -1,0 +1,56 @@
+---
+import Block from "./Block.astro";
+import home from "../assets/home.jpg";
+
+const data = {
+  id: "home",
+  img: {
+    src: home,
+    alt: "nosotros"
+  }
+};
+
+---
+
+<Block id={data.id}>
+  <div slot="left" class="section-content">
+    <h1>Nos casamos</h1>
+    <h3>(finalmente)</h3>
+    <p class="description">
+      Y queremos compartir un almuerzo juntos el sábado 26 de noviembre de 2022, de 13hs a 19hs.<br />
+      Venite con ropa cómoda, con lo que más te guste, sin complicarte por el código de vestimenta.<br />
+      Te pedimos que confirmes asistencia hasta el viernes 11 de noviembre de 2022.<br />
+      Nos vemos!
+    </p>
+  </div>
+  <div slot="right" class="section-img">
+    <img src={data.img.src} alt={data.img.alt} class=""/>
+  </div>
+</Block>
+
+<style lang="scss"> 
+  @import "../styles/global";
+  .section-img {
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+    background: $backgroundColor;
+  }
+
+  .section-img::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: hard-light;
+    background: #008efa;
+    opacity: 0.16;
+  }
+  .section-img > img {
+    -webkit-filter:  brightness(117%) contrast(101%) grayscale(71%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(63%) sepia(0%);
+            filter:  brightness(117%) contrast(101%) grayscale(71%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(63%) sepia(0%);
+    mix-blend-mode: none;
+  }
+</style>
